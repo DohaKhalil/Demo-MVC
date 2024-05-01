@@ -1,0 +1,39 @@
+﻿@model EmployeeVM
+
+@{
+    ViewData["Title"] = "Detalis";
+}
+<head>
+    <link href="~/css/StyleSheetDepartment.css" rel="stylesheet" />
+
+</head>
+
+
+<body>
+    <div class="bg-black , bg-opacity-75 , text-light">
+        <div class="container">
+            <h1>Details @Model.Name</h1>
+
+            <form method="post" asp-action="Create">
+                <partial name="DeatailDeleteViwe"></partial>
+
+
+                <div class="p-2">
+                    <center>
+                        <a asp-action="Edit" asp-route-Id="@Model.Id" type="submit" class="btn btn-info mt-2 , w-50"> Edit</a>
+                        <a asp-action="Index" type="submit" class="btn btn-info mt-2 , w-50">Back to List </a> </button>
+
+                    </center>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+@section Validation
+{
+    <partial name="_ValidationScriptsPartial"></partial>
+
+}
+

@@ -1,0 +1,35 @@
+﻿
+
+@model EmployeeVM
+<div class="mb-3 , w-75">
+    <label for="formGroupExampleInput" class="form-label">Name</label>
+    <input readonly class="form-control" id="formGroupExampleInput" placeholder="Example input Code" asp-for="Name">
+    <span asp-validation-for="Name" class="alert-danger"></span>
+</div>
+<div class="mb-3 , w-75">
+    <label for="formGroupExampleInput2" class="form-label">Age</label>
+    <input readonly type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name" asp-for="Age">
+    <span asp-validation-for="Age" class="alert-danger"></span>
+</div>
+<div class="mb-3 , w-75">
+    <label for="formGroupExampleInput2" class="form-label">Address</label>
+    <input readonly class="form-control" id="formGroupExampleInput2" asp-for="Address">
+</div>
+<div class="mb-3 , w-75">
+    <label for="formGroupExampleInput2" class="form-label">Email</label>
+    <input readonly class="form-control" id="formGroupExampleInput2" type="email" asp-for="Email">
+    <span asp-validation-for="Email" class="alert-danger"></span>
+
+</div>
+<div class="mb-3 , w-75">
+    <label for="formGroupExampleInput2" class="form-label">Phone</label>
+    <input readonly class="form-control" id="formGroupExampleInput2" asp-for="Phone">
+</div>
+<div class="mb-3 , w-75">
+    <label for="formGroupExampleInput2" class="form-label">Salary</label>
+    <input readonly class="form-control" id="formGroupExampleInput2" asp-for="Salary">
+</div>
+<div class="mb-3 , w-75">
+    <label for="formGroupExampleInput2" class="form-label">IsActive</label>
+    <inpu type="checkbox" class="form-check-input" id="formGroupExampleInput2">
+</div>

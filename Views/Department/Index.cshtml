@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Deparntment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/css/StyleSheetDepartment.css" rel="stylesheet" />
+
+</head>
+
+<a asp-action="Create" class="btn btn-danger , mt3" asp-controller="Department">Add Department </a>
+@* @if (TempData["Message"] != null)
+{
+    <div class="alert-danger">
+        <h3>@TempData["Message"]</h3>
+    </div>
+} *@
+@if (Model.Count() > 0 && Model != null)
+{
+    <body>
+        <div class="ObasatySitting">
+        <div class="container">
+            <h3 class="mt-5 , text-light">All Department</h3>
+            <table class="table , mt-5 , text-light">
+                <thead>
+                    <tr>
+                        <th scope="col">@Html.DisplayNameFor(C => C.Code)</th>
+                        <th scope="col">@Html.DisplayNameFor(C => C.Name)</th>
+                        <th scope="col">@Html.DisplayNameFor(C => C.CreatedAt)</th>
+                        <th>Detalis</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var department in Model)
+                    {
+                        <tr>
+                            <th scope="col">@department.Code</th>
+                            <th scope="col">@department.Name</th>
+                            <th scope="col">@department.CreatedAt</th>
+                            <partial name="_ButtonPartialView" model="@department.Id"></partial>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            </div>
+    </body>
+}
+else
+{
+    <div class="alert alert-warning , mt-5">
+        <h1 style="color: red;">No Department Found</h1>
+    </div>
+   
+}
+
+</html>
+

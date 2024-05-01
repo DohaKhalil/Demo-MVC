@@ -1,0 +1,33 @@
+﻿html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.IndexBackGround {
+    background-image: url('../Imege/كانت-فلسطين-وستبقى.jpg');
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 100px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+.ObasatySitting {
+    background-color: rgba(0, 0, 0,0.75);
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

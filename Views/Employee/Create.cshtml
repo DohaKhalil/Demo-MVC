@@ -1,0 +1,43 @@
+﻿@model EmployeeVM
+@{
+    ViewData["Title"] = "Create";
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/StyleSheetDepartment.css" rel="stylesheet" />
+
+</head>
+
+
+<body>
+    <div class="bg-black , bg-opacity-75 , text-light">
+   <div class="container">
+<h1>Create New Employee</h1>
+
+   <form method="post" asp-action="Create">
+    <partial name="CreatEditEmployee"></partial>
+
+
+    <div class="p-2">
+        <center>
+             <button type="submit" class="btn btn-primary mt-3 , p-2 , w-50"> Submit</button>
+            <button asp-action="Index" type="submit" class="btn btn-info mt-2 , w-50">Back to List</button>
+        </center>
+    </div>
+ 
+</form>
+</div>
+</div>
+</body>
+
+@section Validation
+{
+    <partial name="_ValidationScriptsPartial"></partial>
+
+}
+
+
+ 
+

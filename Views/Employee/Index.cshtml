@@ -1,0 +1,96 @@
+﻿@model IEnumerable<EmployeeVM>
+
+@{
+    ViewData["Title"] = "Index";
+    var employee = ViewData["Employee"] as Employee;
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/StyleSheetDepartment.css" rel="stylesheet" />
+
+</head>
+
+<a asp-action="Create" class="btn btn-danger , mt3" asp-controller="Employee">Add Employee </a>
+@if (Model.Count() > 0 && Model != null)
+{
+    <body>
+
+        <div class="ObasatySitting">
+            <div class="container">
+                <div>
+                    <form class="d-flex" role="search" asp-action="Index">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" , name="searchVaue">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="bg-gradient , bg-success , bg-opacity-25 , mt-5"><h3 class=" text-light">All Employee</h3></div>
+
+                <div>
+                <table class="table , mt-5 , text-light ">
+                    <thead>
+                        <tr>
+                            <th scope="col">@Html.DisplayNameFor(C => C.Name)</th>
+                            <th scope="col">@Html.DisplayNameFor(C => C.Age)</th>
+                            <th scope="col">@Html.DisplayNameFor(C => C.Address)</th>
+                            <th scope="col">@Html.DisplayNameFor(C => C.Deparntment)</th>
+                            <th scope="col">@Html.DisplayNameFor(C => C.Email)</th>
+                            <th scope="col">@Html.DisplayNameFor(C => C.Phone)</th>
+                            <th scope="col">@Html.DisplayNameFor(C => C.Salary)</th>
+                            <th scope="col">@Html.DisplayNameFor(C => C.IsActive)</th>
+                            <th>Detalis</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var employeee in Model)
+                        {
+                            <tr>
+                                <td> @employeee.Name</td>
+                                <td> @employeee.Age</td>
+                                <td> @employeee.Address</td>
+                                <td> @employeee.Deparntment?.Name</td>
+                                <td> @Html.DisplayFor(e=> employeee.Email)</td>
+                                <td> @employeee.Phone</td>
+                                <td> @Html.DisplayFor(e=> employeee.Salary)</td>
+                                <td>
+                                @if (employeee.IsActive)
+                                {
+                                    <ic class="fa-solid fa-check"></ic>
+                                }
+                                else
+                                {
+
+                                    <ic class="fa-solid fa-x"></ic>
+                                }
+                                </td>
+
+                                <partial name="_ButtonPartialView" model="@employeee.Id"></partial>
+                              
+                            </tr>
+
+                        }
+
+                    </tbody>
+                </table>
+                </div>
+
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            </div>
+            </div>
+    </body>
+}
+else
+{
+    <div class="alert alert-warning , mt-5">
+        <h1 style="color: red;">No EMPLOYEE FOUND</h1>
+    </div>
+
+}
+
+</html>
+
+

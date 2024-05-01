@@ -1,0 +1,46 @@
+﻿@model EmployeeVM
+@{
+    var Department = new SelectList(ViewBag.Department, "Id", "Name");
+}
+
+
+<div class="mb-3 , w-75">
+    <label for="formGroupExampleInput" class="form-label">Name</label>
+        <input class="form-control" id="formGroupExampleInput" placeholder="Example input Code" asp-for="Name">
+        <span asp-validation-for="Name" class="alert-danger"></span>
+</div>
+<div class="mb-3 , w-75">
+    <label for="formGroupExampleInput" class="form-label">Department</label>
+    <select class="form-control" asp-items="Department" asp-for="DeparntmentId">
+        <option  class="text-center" value="@null">select Department</option>
+        
+    </select>
+</div>
+<div class="mb-3 , w-75">
+    <label for="formGroupExampleInput2" class="form-label">Age</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name" asp-for="Age">
+    <span asp-validation-for="Age" class="alert-danger"></span>
+</div>
+<div class="mb-3 , w-75">
+        <label for="formGroupExampleInput2" class="form-label">Address</label>
+        <input class="form-control" id="formGroupExampleInput2" asp-for="Address">
+ </div>
+<div class="mb-3 , w-75">
+        <label for="formGroupExampleInput2" class="form-label">Email</label>
+        <input class="form-control" id="formGroupExampleInput2" type ="email" asp-for="Email">
+        <span asp-validation-for="Email" class="alert-danger"></span>
+
+    </div>
+<div class="mb-3 , w-75">
+        <label for="formGroupExampleInput2" class="form-label">Phone</label>
+        <input class="form-control" id="formGroupExampleInput2" asp-for="Phone">
+    </div>
+<div class="mb-3 , w-75">
+        <label for="formGroupExampleInput2" class="form-label">Salary</label>
+        <input class="form-control" id="formGroupExampleInput2" asp-for="Salary">
+    </div>
+<div class="mb-3 , w-75">
+        <label for="formGroupExampleInput2" class="form-label">IsActive</label>
+        <input type="checkbox" class="form-check-input" id="formGroupExampleInput2">
+    </div>
+    

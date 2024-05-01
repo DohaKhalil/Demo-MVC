@@ -1,0 +1,31 @@
+﻿@model Deparntment
+@{
+    ViewData["Title"] = "Delete";
+}
+<head>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<div>
+<h3 style="color : red">Delete @Model.Name Department</h3>
+<form method="post" asp-action="Delete">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Code</label>
+        <input readonly class="form-control" id="formGroupExampleInput" placeholder="Example input Code" asp-for="Code">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Name</label>
+        <input readonly type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Create At</label>
+        <input readonly class="form-control" id="formGroupExampleInput2" asp-for="CreatedAt">
+    </div>
+    <div class="p-2">
+        <center>
+            <button type="submit" value="Delete" class="btn btn-danger ,mt-2 , w-50">Delete</button>
+            <button asp-action="Index" class="btn btn-info mt-2 , w-50">Cancel</button>
+        </center>
+    </div>
+</form>
+</div>

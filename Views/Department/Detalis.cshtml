@@ -1,0 +1,47 @@
+﻿@model Deparntment
+
+@{
+    ViewData["Title"] = "Detalis";
+}
+<head>
+    <link href="~/css/StyleSheetDepartment.css" rel="stylesheet" />
+
+</head>
+<body>
+
+<h1>Detalis Of @Model.Name Department</h1>
+    <div class="ObasatySitting">
+        <div class="container">
+    
+<form method="post" asp-action="Create" , class="text-light">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Code</label>
+        <input readonly class="form-control" id="formGroupExampleInput" placeholder="Example input Code" asp-for="Code">
+        <span asp-validation-for="Code" class="alert-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Name</label>
+        <input readonly type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name" asp-for="Name">
+        <span asp-validation-for="Name" class="alert-danger"></span>
+
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Create At</label>
+        <input readonly class="form-control" id="formGroupExampleInput2" asp-for="CreatedAt">
+        <span asp-validation-for="CreatedAt" class="alert-danger"></span>
+
+    </div>
+
+    <div class="p-2">
+        <center>
+            <a asp-action="Edit" asp-route-Id="@Model.Id" type="submit" class="btn btn-info mt-2 , w-50"> Edit</a>
+             <a asp-action="Index" type="submit" class="btn btn-info mt-2 , w-50">Back to List </a> </button>
+
+        </center>
+    </div>
+
+</form>
+</div>
+
+</div>
+</body>

@@ -1,0 +1,16 @@
+﻿body {
+   
+    background-image: url('../Imege/—Pngtree—research and discussion projects for_1518012.jpg');
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+.ObasatySitting {
+    background-color: rgba(0, 0, 0,0.75);
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
